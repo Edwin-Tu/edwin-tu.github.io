@@ -1,6 +1,8 @@
 import React from "react";
 import TechBackground from "../components/TechBackground";
 import Edwin from '../images/me.jpg';
+import AIApdf from '../images/Can AI Keep a Script.pdf';
+import AIAvideo from '../images/LLM真的能保守秘密嗎.mp4';
 
 const Home: React.FC = () => {
     return (
@@ -58,6 +60,16 @@ const Home: React.FC = () => {
                             <h3>崇正基金會-音控人員</h3>
                             <p className="muted">2023 春季~至今 · 台北</p>
                             <p>在團隊中負責各個班期及活動音控</p>
+                        </article>
+                        <article className="exp-item">
+                            <h3>AIA 人工智慧學校 實戰發表會</h3>
+                            <p className="muted">2026.05.18</p>
+                            <p>Can AI Keep a Secret?</p>
+                            <p>
+                                <a href={AIApdf} target="_blank" rel="noreferrer">PDF</a>
+                                {" | "}
+                                <a href={AIAvideo} target="_blank" rel="noreferrer">MP4</a>
+                            </p>
                         </article>
                     </section>
 

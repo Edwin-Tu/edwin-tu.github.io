@@ -1,7 +1,7 @@
 import React from "react";
 import TechBackground from "../components/TechBackground";
 import Edwin from '../images/me.jpg';
-import AIApdf from '../images/Can AI Keep a Script.pdf';
+import AIAppt from '../images/Shattering_the_AI_Fortress.pptx?url';
 import AIAvideo from '../images/LLM真的能保守秘密嗎.mp4';
 
 const Home: React.FC = () => {
@@ -63,10 +63,13 @@ const Home: React.FC = () => {
                         </article>
                         <article className="exp-item">
                             <h3>AIA 人工智慧學校 實戰發表會</h3>
-                            <p className="muted">2026.05.18</p>
-                            <p>Can AI Keep a Secret?</p>
+                            <p className="muted">2026.05.18 政大公企中心</p>
+                                <p>
+                                Can AI Keep a Secret? 
+                                AI真的能幫我們保守秘密嗎?
+                                </p>
                             <p>
-                                <a href={AIApdf} target="_blank" rel="noreferrer">PDF</a>
+                                <a href={AIAppt} target="_blank" rel="noreferrer">PDF</a>
                                 {" | "}
                                 <a href={AIAvideo} target="_blank" rel="noreferrer">MP4</a>
                             </p>

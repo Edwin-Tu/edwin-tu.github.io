@@ -1,0 +1,212 @@
+:root{
+  --max-width: 960px;
+  /* 調整主色為偏科技感的青綠色 */
+  --accent: #06b6d4; /* cyan-teal */
+  --bg: #f3f8ff;
+  --muted: #6b7280;
+  --radius: 10px;
+  --container-padding: 20px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans TC",sans-serif;
+  color:#111827;
+  background:var(--bg);
+  line-height:1.6;
+}
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:var(--container-padding);
+}
+.site-header{
+  /* 淡色漸層的科技風頂欄 */
+  background:linear-gradient(90deg, rgba(6,182,212,0.06), rgba(37,99,235,0.02));
+  border-bottom:1px solid rgba(6,182,212,0.08);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.header-left{display:flex;align-items:center;gap:12px}
+/* 圓形容器，讓圖片可以被裁切並保持圓形 */
+.profile-wrap{width:48px;height:48px;border-radius:50%;overflow:hidden;flex:0 0 48px;display:inline-block}
+/* 圖片使用 cover 與 object-position 控制焦點位置，並放大 20% */
+.profile-photo{width:100%;height:100%;object-fit:cover;object-position:50% 75%;transform:scale(1.2);display:block;border:0;}
+.site-title{font-size:1.2rem;margin:0;padding:10px 0}
+.nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:0.95rem}
+.nav a:hover{color:var(--accent)}
+
+h2{
+  color:#1f2937;
+  margin:0 0 1rem;
+  font-size:1.5rem;
+}
+
+.section{padding:2rem 0}
+.section.alt{background:#fff}
+#experience{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+}
+#experience h2{
+  flex:0 0 100%;
+}
+.exp-item{
+  flex:1 1 280px;
+  /* 卡片使用微淡漸層以帶出科技感 */
+  background:linear-gradient(180deg, rgba(6,182,212,0.03), rgba(99,102,241,0.01));
+  padding:1.25rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(6,182,212,0.06);
+}
+.exp-item h3{
+  margin:0 0 0.5rem;
+  font-size:1.1rem;
+}
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:1rem;
+  margin-top:1rem;
+}
+.project{
+  background:linear-gradient(135deg, rgba(6,182,212,0.03), rgba(124,58,237,0.025));
+  padding:1.25rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(6,182,212,0.05);
+}
+.project h4{margin:0 0 0.75rem}
+
+.muted{color:var(--muted);font-size:0.9rem}
+
+/* 小裝飾：標題下方的漸層線條 */
+.section h2{position:relative;padding-bottom:0.5rem}
+.section h2:after{content:"";position:absolute;left:0;bottom:0;height:4px;width:64px;background:linear-gradient(90deg,var(--accent),#7c3aed);border-radius:4px;opacity:0.9}
+
+ul{
+  list-style:none;
+  padding:0;
+  margin:0.5rem 0;
+}
+ul li{
+  margin:0.5rem 0;
+  position:relative;
+  padding-left:1.25rem;
+}
+ul li:before{
+  content:"•";
+  position:absolute;
+  left:0;
+  color:var(--accent);
+}
+
+/* Contact links */
+#contact a{
+  color:var(--accent);
+  text-decoration:none;
+}
+#contact a:hover{text-decoration:underline}
+
+.site-footer{
+  text-align:center;
+  padding:1rem 0;
+  color:var(--muted);
+  font-size:0.9rem;
+}
+
+/* 響應式設計 */
+@media (max-width:640px){
+  .nav{display:none} /* 小螢幕先隱藏選單 */
+  .projects-grid{grid-template-columns:1fr}
+}
+
+/* 在小螢幕上稍微縮小頭像以保持版面 */
+@media (max-width:420px){
+  .profile-wrap{width:40px;height:40px}
+}
+/* 大頭像在頁面中間顯示（置中並放大） */
+.template-note{background:transparent;border:0;padding:18px 0 8px;margin-bottom:18px}
+.template-note-inner{display:flex;align-items:center;gap:20px;justify-content:center;max-width:880px;margin:0 auto;transform:translateX(-6%)}
+.template-note-left{flex:0 0 200px;display:flex;justify-content:center}
+.template-note-right{flex:1}
+.hero-avatar-wrap{display:flex;justify-content:center;align-items:center}
+.hero-avatar{width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:50% 75%;transform:scale(1.2);box-shadow:0 6px 20px rgba(2,6,23,0.12);border:4px solid #fff}
+
+@media (max-width:640px){
+  .hero-avatar{width:120px;height:120px;transform:scale(1.05)}
+  .template-note-inner{transform:none;flex-direction:row}
+}
+
+@media (max-width:420px){
+  .hero-avatar{width:88px;height:88px;transform:none}
+  .template-note-inner{flex-direction:column;align-items:center;gap:12px}
+  .template-note-left{flex:auto}
+  .template-note-right{flex:auto}
+}
+
+.exp-item-link{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.exp-item-link:hover .exp-item{
+  border-color:var(--accent);
+  box-shadow:0 4px 20px rgba(6,182,212,0.15);
+  cursor:pointer;
+}
+.exp-item-link:hover{
+  transform:translateY(-3px);
+}
+
+/* AIA 經歷詳細頁面相簿 */
+.exp-gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:1rem;
+  margin-top:1rem;
+}
+.exp-gallery-item{
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid rgba(6,182,212,0.08);
+  background:#fff;
+}
+.exp-gallery-item img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* utility classes to nudge the whole inner block left/right */
+.template-note--shift-left .template-note-inner{transform:translateX(-8%)}
+.template-note--shift-right .template-note-inner{transform:translateX(8%)}
+
+/* --------- 科技風背景與樣式 --------- */
+/* canvas 背景（固定、覆蓋整個畫面且不影響互動） */
+#tech-bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block}
+
+/* Neon / 科技風標題小調整（可接受性：保留可讀性） */
+h2{color:var(--accent);text-shadow:0 0 8px rgba(6,182,212,0.16),0 2px 10px rgba(2,6,23,0.06)}
+
+/* 英雄大頭照微光暈效果 */
+.hero-avatar{transition:box-shadow .35s ease, transform .35s ease}
+.hero-avatar:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 14px 40px rgba(6,182,212,0.12),0 0 24px rgba(124,58,237,0.06)}
+
+/* 動態背景開關按鈕（簡潔） */
+/* visual toggle removed (button removed in HTML) */
+
+/* 為效能與無障礙考量：在小螢幕或使用者偏好減動畫時，預設關閉動畫 */
+@media (max-width:640px){
+  #tech-bg{display:none}
+}
+@media (prefers-reduced-motion: reduce){
+  #tech-bg{display:none}
+}
+
+/* 當 body 設定 data-visuals="off" 時，關閉 canvas */
+body[data-visuals="off"] #tech-bg{display:none}

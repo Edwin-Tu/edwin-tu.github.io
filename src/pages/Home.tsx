@@ -61,7 +61,7 @@ const Home: React.FC = () => {
                             <p className="muted">2023 春季~至今 · 台北</p>
                             <p>在團隊中負責各個班期及活動音控</p>
                         </article>
-                        <a href="#/experience/aia-2026" target="_blank" rel="noreferrer" className="exp-item-link">
+                        <a href="/#/experience/aia-2026" target="_blank" rel="noreferrer" className="exp-item-link">
                             <article className="exp-item">
                                 <h3>AIA 人工智慧學校 實戰發表會</h3>
                                 <p className="muted">2026.05.18 政大公企中心</p>

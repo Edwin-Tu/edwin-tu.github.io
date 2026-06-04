@@ -19,7 +19,7 @@ const App: React.FC = () => {
         <Route path="/learning" element={<Learning />} />
 
         {/* AIA 實戰發表會詳細頁面 */}
-        <Route path="#/experience/aia-2026" element={<AIAExperience />} />
+        <Route path="/#/experience/aia-2026" element={<AIAExperience />} />
       </Routes>
     </>
   );
